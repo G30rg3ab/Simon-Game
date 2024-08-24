@@ -2,7 +2,6 @@ var buttonColours = ['red', 'blue', 'green', 'yellow'];
 var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
-var started = false;
 
 let fadeTime = 50; //ms for fadeIn and fadeOut annimation
 
@@ -68,7 +67,7 @@ function checkAnswer(currentLevel){
             userClickedPattern = [];
         }
         
-    } else {
+    } else if (level > 0) {
         // The user failed 
         var audio = new Audio("sounds/wrong.mp3");
         audio.play();
